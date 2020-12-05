@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms</title>
+</head>
+<body>
+  <section>
+    <h1>Forms in html</h1>
+    <hr>
+    <p>Try to do this form: </p>
+  </section>
+
+  <form>
+    <fieldset>
+      <legend>Personal information</legend>
+      <label>Surname:
+        <input 
+        type="text"
+        name="surname">
+      </label><br>
+
+      <label>Name:
+        <input 
+        type="text"
+        name="name">
+      </label><br>
+
+      <label>How old are you:
+        <input 
+        type="number"
+        min="13"
+        max="99"
+        name="old">
+      </label><br>
+
+      <label>Full date of birth:
+        <input 
+        type="date"
+        name="birth">
+      </label><br>
+
+      <label>I accept the tern of the agreement:
+        <input 
+        type="checkbox"
+        name="agreement">
+      </label><br>
+    </fieldset><br>
+  
+  <fieldset>
+    <legend>Registration</legend>
+    <label>E-mail:
+      <input
+      type="email"
+      name="email"
+      placeholder="est@youremail.com">
+    </label><br>
+
+    <label>Password:
+      <input
+      type="Password"
+      name="Password">
+    </label><br>
+  </fieldset><br>
+
+  <fieldset>
+    <legend>An interesting fact about you</legend>
+    <label>Do you love cats?
+      <input 
+      type="radio" 
+      name="response" 
+      value="yes">да
+      <input 
+      type="radio" 
+      name="response" 
+      value="no">нет
+    </label><br>
+
+    <label>What you favorite color?
+      <input 
+      type="color"
+      name="color">
+    </label><br>
+
+    <label>What time do you go to bed?
+      <input 
+      value="00:00"
+      type="time"
+      name="goToBed">
+    </label><br>
+
+    <label>What are you favorite brand of cars?
+      <select name=“car”>
+        <option value="Friday" selected>BMW</option>
+        <option value="Saturday">Audi</option>
+        <option value="Sunday">Lada</option>
+      </select>
+    </label><br>
+
+    <label>How do you rate our work?
+      <input 
+      type="range"
+      name="rateWork">
+    </label><br>
+  </fieldset><br>
+
+  <fieldset>
+    <Legend>Additional info</Legend>
+    <label>Comments
+      <textarea
+      name="comments"
+      rows="2"
+      cols="20">
+    </textarea>
+    </label><br>
+
+    <label>Would you recommends us
+      <select name=“recommends”>
+        <option value="yesF" selected>yes</option>
+        <option value="no">no</option>
+      </select>
+    </label>
+  </fieldset>
+
+  <input 
+  type="submit"
+  name="submitForm1">
+  <input 
+  type="reset"
+  name="resrtForm1"
+  >
+
+  </form>
+</body>
+</html>

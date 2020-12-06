@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Forms</title>
-  <!--
   <style>
-    body {
-      line-height: 1.8;
+    div {
+      margin: 5px;
     }
   </style>
--->
 </head>
+
 <body>
   <section>
     <h1>Forms in html</h1>
@@ -22,122 +22,120 @@
   <form>
     <fieldset>
       <legend>Personal information</legend>
-      <label>Surname:
-        <input 
-        type="text"
-        name="surname">
-      </label><br>
 
-      <label>Name:
-        <input 
-        type="text"
-        name="name">
-      </label><br>
+      <div>
+        <label>Surname:
+          <input type="text" name="surname">
+        </label>
+      </div>
 
-      <label>How old are you:
-        <input 
-        type="number"
-        min="13"
-        max="99"
-        name="old">
-      </label><br>
+      <div>
+        <label>Name:
+          <input type="text" name="name">
+        </label>
+      </div>
 
-      <label>Full date of birth:
-        <input 
-        type="date"
-        name="birth">
-      </label><br>
+      <div>
+        <label>How old are you:
+          <input type="number" min="13" max="99" name="old">
+        </label>
+      </div>
 
-      <label>I accept the tern of the agreement:
-        <input 
-        type="checkbox"
-        name="agreement">
-      </label><br>
-    </fieldset><br>
-  
-  <fieldset>
-    <legend>Registration</legend>
-    <label>E-mail:
-      <input
-      type="email"
-      name="email"
-      placeholder="est@youremail.com">
-    </label><br>
+      <div>
+        <label>Full date of birth:
+          <input type="date" name="birth">
+        </label>
+      </div>
 
-    <label>Password:
-      <input
-      type="Password"
-      name="Password">
-    </label><br>
-  </fieldset><br>
+      <div>
+        <label>I accept the tern of the agreement:
+          <input type="checkbox" name="agreement">
+        </label>
+      </div>
 
-  <fieldset>
-    <legend>An interesting fact about you</legend>
-    <label>Do you love cats?
-      <input 
-      type="radio" 
-      name="response" 
-      value="yes">да
-      <input 
-      type="radio" 
-      name="response" 
-      value="no">нет
-    </label><br>
+    </fieldset>
 
-    <label>What you favorite color?
-      <input 
-      type="color"
-      name="color">
-    </label><br>
+    <fieldset>
+      <legend>Registration</legend>
 
-    <label>What time do you go to bed?
-      <input 
-      value="00:00"
-      type="time"
-      name="goToBed">
-    </label><br>
+      <div>
+        <label>E-mail:
+          <input type="email" name="email" placeholder="est@youremail.com">
+        </label>
+      </div>
 
-    <label>What are you favorite brand of cars?
-      <select name=“car”>
-        <option value="Friday" selected>BMW</option>
-        <option value="Saturday">Audi</option>
-        <option value="Sunday">Lada</option>
-      </select>
-    </label><br>
+      <div>
+        <label>Password:
+          <input type="Password" name="Password">
+        </label>
+      </div>
 
-    <label>How do you rate our work?
-      <input 
-      type="range"
-      name="rateWork">
-    </label><br>
-  </fieldset><br>
+    </fieldset>
 
-  <fieldset>
-    <Legend>Additional info</Legend>
-    <label>Comments
-      <textarea
-      name="comments"
-      rows="2"
-      cols="20">
-    </textarea>
-    </label><br>
+    <fieldset>
+      <legend>An interesting fact about you</legend>
 
-    <label>Would you recommends us
-      <select name=“recommends”>
-        <option value="yesF" selected>yes</option>
-        <option value="no">no</option>
-      </select>
-    </label>
-  </fieldset>
+      <div>
+        <label>Do you love cats?
+          <input type="radio" name="response" value="yes">yes
+        </label>
+        <input type="radio" name="response" value="no">no
+      </div>
 
-  <input 
-  type="submit"
-  name="submitForm1">
-  <input 
-  type="reset"
-  name="resrtForm1"
-  >
+      <div>
+        <label>What you favorite color?
+          <input type="color" name="color">
+        </label>
+      </div>
+
+      <div>
+        <label>What time do you go to bed?
+          <input value="00:00" type="time" name="goToBed">
+        </label>
+      </div>
+
+      <div>
+        <label>What are you favorite brand of cars?
+          <select name=“car”>
+            <option value="Friday" selected>BMW</option>
+            <option value="Saturday">Audi</option>
+            <option value="Sunday">Lada</option>
+          </select>
+        </label>
+      </div>
+
+      <div>
+        <label>How do you rate our work?
+          <input type="range" name="rateWork" value="0">
+        </label>
+      </div>
+
+    </fieldset>
+
+    <fieldset>
+      <Legend>Additional info</Legend>
+
+      <div>
+        <label>Comments
+          <textarea name="comments" rows="" cols=""></textarea>
+        </label>
+      </div>
+
+      <div>
+        <label>Would you recommends us
+          <select name=“recommends”>
+            <option value="yes" selected>yes</option>
+            <option value="no">no</option>
+          </select>
+        </label>
+      </div>
+
+    </fieldset>
+
+    <input type="button" name="submitForm1" value="Submit">
+    <input type="button" name="resetForm1" value="Reset">
 
   </form>
 </body>
+
 </html>

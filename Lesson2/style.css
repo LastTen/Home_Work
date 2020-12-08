@@ -1,35 +1,36 @@
-#table_First{
-  font-size: 25px;
-  width: 400px;
-  height: 400px;
+table{
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  background-color: black;
 }
-#logo{
-  background-color: rgb(221, 245, 4);
+
+td{
   text-align: center;
-  word-wrap: break-word;
+  font-size: 25px;
+}
+
+#logo{
+  background-color: rgb(228, 248, 48);
+  width: 90px;
+  height: 80px;
 }
 #menu{
-  background-color: rgb(243, 20, 39);
-  text-align: center;
+  background-color: rgb(252, 7, 7);
 }
 #news{
-  background-color: rgb(209, 157, 59);
-  text-align: center;
-  color: white;
-  word-wrap: break-word;
+  background-color: rgb(168, 79, 44);
+  color: white
 }
-#list{
-  background-color: rgb(221, 245, 4);
-  text-align: center;
-  word-wrap: break-word;
+#other{
+  background-color: rgb(228, 248, 48);
 }
-#navigation{
-  background-color: rgb(24, 24, 27);
-  text-align: center;
+#nav{
+  background-color: rgb(17, 6, 4);
   color: white;
-  word-wrap: break-word;
+  width: 30px;
 }
 #footer{
-  background-color: rgb(221, 245, 4);
-  text-align: center;
+  background-color: rgb(228, 248, 48);
+  height: 60px;
 }

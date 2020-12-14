@@ -6,13 +6,12 @@
   flex-direction: row-reverse;
 }
 
-.button_star{
+.radio_star{
   display: none;
 
 }
 
-
-.card__rating-star {
+.star_img {
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 30px;
@@ -23,15 +22,15 @@
   fill: #979692;
 }
 
-.rating_block label svg path:hover{
+.rating_block label .star_img:hover{
   fill: rgb(255, 255, 0);
 }
 
-.rating_block label:hover ~ label svg path{
+.rating_block label:hover ~ label .star_img{
   fill: rgb(255, 255, 0);
 }
 
-.rating_block .button_star:checked ~ label svg path{
+.rating_block .radio_star:checked ~ label .star_img{
   fill: rgb(255, 255, 0);
 }
 

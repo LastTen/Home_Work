@@ -1,7 +1,6 @@
 .rating_block{
-  width: 100px;
-  height: 20px;
-  background-color: brown;
+  width: 200px;
+  height: 40px;
   margin: auto;
   display: flex;
   flex-direction: row-reverse;
@@ -16,14 +15,22 @@
 .card__rating-star {
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 15px;
-  height: 15px;
-  margin-top: 2px;
-  margin-right: 3px; 
+  flex-basis: 30px;
+  height: 30px;
+  margin-top: 5px;
+  margin-right: 6px; 
 
-  fill: #f8f4e4;
+  fill: #979692;
 }
 
-.card__rating-star:hover{
-  fill: rgb(253, 249, 8);
+.rating_block label svg path:hover{
+  fill: rgb(255, 255, 0);
+}
+
+.rating_block label:hover ~ label svg path{
+  fill: rgb(255, 255, 0);
+}
+
+.rating_block .buttom_star:checked ~ label svg path{
+  fill: rgb(255, 255, 0);
 }

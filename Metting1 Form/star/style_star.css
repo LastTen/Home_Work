@@ -6,7 +6,7 @@
   flex-direction: row-reverse;
 }
 
-.buttom_star{
+.button_star{
   display: none;
 
 }
@@ -31,6 +31,7 @@
   fill: rgb(255, 255, 0);
 }
 
-.rating_block .buttom_star:checked ~ label svg path{
+.rating_block .button_star:checked ~ label svg path{
   fill: rgb(255, 255, 0);
 }
+

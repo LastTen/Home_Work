@@ -125,9 +125,17 @@ body{
 }
 
 .header__interactiveButton{
-  width: 20px;
-  height: 40px;
+  width: 40px;
+  height: 50px;
   background-color: aqua;
+}
+
+.arow{
+  font-size: 36px;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(42, 46, 65, 0.7);
+  color: white;
 }
 
 .mounthView__calenarTable{
@@ -186,9 +194,6 @@ td:hover{
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-
-
-  background-color: rgb(240, 50, 50);
 }
 
 .finanse{

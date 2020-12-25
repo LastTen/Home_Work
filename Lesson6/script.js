@@ -51,3 +51,37 @@ function rentalCarCost(d) {
 }
 */
 
+function isValidWalk(walk) {
+  let North = 0
+  let East = 0
+  let South = 0
+  let West = 0
+
+  for (let i = 0; i < walk.length; i++){
+    if (walk[i] === "n"){
+      North += 1
+    }
+    if (walk[i] === "e"){
+      East += 1
+    }
+    if (walk[i] === "s"){
+      South += 1
+    }
+    if (walk[i] === "w"){
+      West += 1
+    }
+  }
+  if((North + East + South + West) === 10){
+    if(North === 5 || East === 5 || South === 5 || West === 5){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+  else{
+    return false;
+  }
+}
+
+isValidWalk(['n','s','n','s','n','s','n','s','n','s'])

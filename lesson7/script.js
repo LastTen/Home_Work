@@ -15,7 +15,7 @@ function getMultiplesNumbers(from, to, k) {
 }
 
 console.log( getMultiplesNumbers(10, 20, 5) ); // [10, 15, 20]
-*/
+
 
 
 function getPeople(handshake) {
@@ -35,3 +35,29 @@ getPeople(6); // 3
 getPeople(10); // 4
 getPeople(15); // 5
 getPeople(120); // ?
+*/
+
+//----Об`єкти------//
+const user = {}
+user.name ="Alexander"
+user.group = "fe2209"
+user.name = "Ilya"
+delete user.name
+user.name = "Victor"
+
+
+const user2 = {}
+for (let key in user) {
+  user2[key] = user[key]
+}
+user2.age = 355
+user2.name = "john"
+
+console.log(user, user2);
+
+
+// for (let key in user2) {
+//   let count = 0;
+//   count ++
+//   console.log(key, count);
+// }

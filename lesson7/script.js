@@ -55,12 +55,16 @@ user2.name = "john"
 
 console.log(user, user2);
 
+//Функція для підрахунку кількості ключів
 
-for (let key in user2) {
+let countFunk = function(userCount){
   let count = 0;
-  count ++
-  console.log(key, count);
+  for (let key in userCount) {
+    count ++
+  }
+  return count
 }
+console.log(countFunk(user2));
 
 
 

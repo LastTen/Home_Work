@@ -56,8 +56,24 @@ user2.name = "john"
 console.log(user, user2);
 
 
-// for (let key in user2) {
-//   let count = 0;
-//   count ++
-//   console.log(key, count);
+for (let key in user2) {
+  let count = 0;
+  count ++
+  console.log(key, count);
+}
+
+
+
+
+// //взаємодія з функціями
+
+
+// let calk = function(a, b){
+//   return a+b
 // }
+
+// let res = function(a, b){
+//   return a*b
+// }
+
+// console.log(res(calk(2, 2), calk(3, 3)));

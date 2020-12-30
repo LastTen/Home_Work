@@ -35,7 +35,7 @@ getPeople(6); // 3
 getPeople(10); // 4
 getPeople(15); // 5
 getPeople(120); // ?
-*/
+
 
 //----Об`єкти------//
 const user = {}
@@ -82,7 +82,7 @@ console.log(countFunk(user2));
 
 // console.log(res(calk(2, 2), calk(3, 3)));
 
-
+*/
 
 /*
 // дата  //
@@ -95,3 +95,20 @@ function getVillainName(birthday){
 }
 console.log(getVillainName(new Date("May 3")));
 */
+
+/*
+//---Функція шукає відсутні оюєкти від 0 до 9 і повертає в обєднаном масиві----//
+function getMissingElement(superImportantArray){
+  let num = [0,1,2,3,4,5,6,7,8,9];
+  let res = []
+    for (let i = 0; i < num.length; i++){
+      if (!superImportantArray.includes(i)){
+        res.push(i)
+      }
+    }
+    return superImportantArray.concat(res)
+}
+
+console.log(getMissingElement( [0,4]));
+*/
+

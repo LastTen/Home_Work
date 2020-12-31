@@ -111,4 +111,40 @@ function getMissingElement(superImportantArray){
 
 console.log(getMissingElement( [0,4]));
 */
+/*
 
+//присвоїти null кожному з запитань//
+var questions = [{
+  question: "What's the currency of the USA?",
+  choices: ["US dollar", "Ruble", "Horses", "Gold"],
+  corAnswer: 0
+}, {
+  question: "Where was the American Declaration of Independence signed?",
+  choices: ["Philadelphia", "At the bottom", "Frankie's Pub", "China"],
+  corAnswer: 0
+}];
+
+for (let i = 0; i < questions.length; i++){
+  questions[i].usersAnswer = null
+}
+console.log(questions[0].usersAnswer === null);
+*/
+
+/*
+//перевернути кожне слово в строчкі і зєднати з пробілами після окрім останнього))//
+function reverseWords(str) {
+  reword = str.split(" ")
+  res = ""
+  for(let i = 0; i < reword.length; i++){
+    for(let j = reword[i].length -1; j >= 0; j--){
+      res = res + reword[i][j];
+    }
+    if(i !== reword.length -1){
+      res += " "
+    }
+  }
+  return res
+}
+
+console.log(reverseWords("hello world"));
+*/

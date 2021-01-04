@@ -68,3 +68,13 @@ const numForSome = [1,2,3,4,5,6,7]
 const someBig8 = numForSome.some(num => num > 8) //тільки булійовий тип 
 console.log(everySm8);
 */
+
+/*
+// Метод .reducer акумулює значення масиву)) плюсує одне до іншого//
+const numForReduce = [1,3,6,15,30];
+const numReduce = numForReduce.reduce(function(accumulator, currentValue, index){
+  console.log(accumulator);
+  return accumulator + currentValue
+}, 10) // cтартове значення вказується після закриття функції
+console.log(numReduce);
+*/

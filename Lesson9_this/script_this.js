@@ -30,25 +30,25 @@ a.b.multNew(5, 7)
 sumNew.call(a, 6, 8)
 multNew.apply(a.b,[5, 8])
 */
-/*
+
 function hello(){
   return(this.name);
 }
 
 const person = {
-  name: "John",
-  age: "32",
+  name: "users",
   sayHello: hello,
-  logInfo: function(){
-    console.log(`Name is ${this.name}`);
-    console.log(`Age is ${this.age}`);
+  logInfo(user = this){
+    console.log(`Name is ${user.name}`);
+    console.log(`Age is ${user.age}`);
   }
 }
 //console.log(person.sayHello());
 
-const person2 = {
+const person1 = {
   name: 'Julia',
   age: 20,
   logInfo: person.logInfo
 }
-*/
+
+person1.logInfo()

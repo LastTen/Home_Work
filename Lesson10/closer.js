@@ -1,18 +1,14 @@
+'use strict'
 function createSecretHolder(secret) {
-  return secret
-}
+  let _secret = secret;
 
+  return {
+      getSecret: function() {
+          return _secret;
+      },
 
-const secret1 = {
-  nameSecret1: '',
-  create:createSecretHolder,
-  setSecret(secret){
-    secret1.nameSecret1 = secret;
-  },
-  getSecret(){
-    return secret.nameSecret1
+      setSecret: function(secret) {
+          _secret = secret;
+      }
   }
-
 }
-secret1.setSecret("123");
-console.log(secret1.nameSecret1);

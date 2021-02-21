@@ -1,0 +1,44 @@
+/* лекція 4 макет
+лекція 14 grid
+лекція 8 дата календар 
+*/
+html{
+  height: 100%;
+}
+body{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.TaskBoard{
+  background-color: cadetblue;
+  display: grid;
+  grid-template-rows: 1fr 5fr 0.5fr;
+}
+
+.Vidobragh{
+  background-color: crimson;
+}
+
+.Task{
+  background-color: cyan;
+}
+
+
+
+.NavigationCalend{
+  background-color: chartreuse;
+  display: grid;
+  grid-template-rows: 1fr 4fr 1.5fr;
+}
+
+.Perecluch{
+  background-color: darkcyan;
+}
+
+.Calendar{
+  background-color: gray;
+}

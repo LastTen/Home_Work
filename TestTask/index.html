@@ -1,20 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Task</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <section class="TaskBoard">
-    <div class="Vidobragh">Місяць</div>
-    <div class="Task">Завдання</div>
+  <section class="taskBoard">
+    <div class="taskBoard__view">
+      <div class="taskBoard__viev--Data">22 Березня</div>
+    </div>
+    <ul class="taskBoard__taskDay">
+      <li class="taskBoard__rowOfDay">
+        <div class="taskBoard__timeKey">07:00</div>
+        <div class="taskBoard__event taskBoard__event--active">Записатись</div>
+      </li>
+      <li class="taskBoard__rowOfDay">
+        <div class="taskBoard__timeKey">08:00</div>
+      </li>
+      <li class="taskBoard__rowOfDay">
+        <div class="taskBoard__timeKey">09:00</div>
+        <div class="taskBoard__event taskBoard__event--active">Записатись</div>
+      </li>
+      <li class="taskBoard__rowOfDay">
+        <div class="taskBoard__timeKey">10:00</div>
+      </li>
+      <li class="taskBoard__rowOfDay">
+        <div class="taskBoard__timeKey">11:00</div>
+      </li>
+      <li class="taskBoard__rowOfDay">
+        <div class="taskBoard__timeKey">12:00</div>
+      </li>
+      <li class="taskBoard__rowOfDay">
+        <div class="taskBoard__timeKey">13:00</div>
+      </li>
+      <li class="taskBoard__rowOfDay">
+        <div class="taskBoard__timeKey">14:00</div>
+      </li>
+      <li class="taskBoard__rowOfDay">
+        <div class="taskBoard__timeKey">15:00</div>
+      </li>
+      <li class="taskBoard__rowOfDay">
+        <div class="taskBoard__timeKey">16:00</div>
+      </li>
+      <li class="taskBoard__rowOfDay">
+        <div class="taskBoard__timeKey">17:00</div>
+      </li>
+      <li class="taskBoard__rowOfDay">
+        <div class="taskBoard__timeKey">18:00</div>
+      </li>
+      <li class="taskBoard__rowOfDay">
+        <div class="taskBoard__timeKey">19:00</div>
+      </li>
+      <li class="taskBoard__rowOfDay">
+        <div class="taskBoard__timeKey">20:00</div>
+      </li>
+      <li class="taskBoard__rowOfDay">
+        <div class="taskBoard__timeKey">21:00</div>
+      </li>
+      <li class="taskBoard__rowOfDay">
+        <div class="taskBoard__timeKey">22:00</div>
+      </li>
+      <li class="taskBoard__rowOfDay">
+        <div class="taskBoard__timeKey">23:00</div>
+      </li>
+    </ul>
   </section>
 
-  <section class="NavigationCalend">
-    <div class="Perecluch">Зміна місяці</div>
-    <div class="Calendar"> Календар</div>
+  <section class="navCal">
+    <div class="navCal__muve">
+      <div class="navCal__panel">
+        <button class="navCal__muveBefore"><</button>
+        <div class="navCal__month">Березень</div>
+        <button class="navCal__muveAfter">></button>
+      </div>
+    </div>
+    <div class="navCal__calendar"> Календар</div>
   </section>
 </body>
+
 </html>

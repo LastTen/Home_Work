@@ -34,11 +34,12 @@ localDate.DAYS = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'];
 //console.log( localDate(2020, 12, 28).toString() );
 
 
-function calendar(monthNum, yearNum){
+function calendar(monthNum, yearNum, rootSelector){
   const firstDay = localDate(yearNum, monthNum, 1);
   const lastDay = localDate(yearNum, monthNum + 1, 0);
   const monthDays = [];
-  const lastDayNum = lastDay.getDate() + 6 - lastDay.getDay()
+  const lastDayNum = lastDay.getDate() + 6 - lastDay.getDay();
+ 
 
   for (let dayNum = 1 - firstDay.getDay(); dayNum <= lastDayNum; dayNum++){
     monthDays.push(localDate(yearNum, monthNum, dayNum))
@@ -46,6 +47,7 @@ function calendar(monthNum, yearNum){
 
 
   return {
+    _rootEl,
     firstDay,
     lastDay,
     monthDays
@@ -55,4 +57,6 @@ function calendar(monthNum, yearNum){
 
 };
 
-//console.log(calendar(03, 2020));
+
+console.log(calendar(03, 2020, '.navCal__calendar'));
+console.log(calendar(02, 2020, '.navCal__calendarJS'));

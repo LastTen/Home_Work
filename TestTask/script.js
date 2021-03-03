@@ -103,6 +103,8 @@ Calendar.prototype._renderDay = function(localDay){
   const el = document.createElement('li')
 
   el.innerText = localDay.getDate();
+
+  console.log(this); /// відсуті дані
   el.classList.add('CalendarDay');
 
   if(localDay.getMonthNum() !== this.monthNum){

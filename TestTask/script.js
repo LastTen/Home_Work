@@ -44,17 +44,20 @@ let dateUs = new Date;
 let dayDateUs = dateUs.getDay()
 let monthDateUs = dateUs.getMonth() + 1
 let yearDateUs = dateUs.getFullYear()
-let weakName = localDate.FULLDAYS[(dateUs.getDay() - 1 + 7) % 7]
+
 
 
 
 
 function calendar(dayName, monthNum, yearNum){
   const firstDay = localDate(yearNum, monthNum, 1);
+  const fullNameD = localDate(yearNum, monthNum, dayName).getFullDayNames;
   const lastDay = localDate(yearNum, monthNum + 1, 0);
   const monthDays = [];
+  //const weakName = localDate.FULLDAYS[(dateUs.getDay() - 1 + 7) % 7]
   const lastDayNum = lastDay.getDate() + 6 - lastDay.getDay();
   let _headerEl, _dayNamesEl, _daysEl;
+  
 
   _headerEl = document.querySelector('.navCal__month');
   _dayNamesEl = document.querySelector('.navCal__calendarWeek');
@@ -107,7 +110,7 @@ function calendar(dayName, monthNum, yearNum){
   }
 
   function fillFullDay(){
-    _taskBordNameDate.innerText =`${weakName}`;
+    _taskBordNameDate.innerText = `${fullNameD()}`;
   };
 
   //console.log(localDate.FULLDAYS[]);
@@ -134,5 +137,5 @@ function calendar(dayName, monthNum, yearNum){
 
 };
 
-calendar(dayDateUs, monthDateUs, yearDateUs);
+calendar(20, 05, yearDateUs);
 

@@ -40,11 +40,11 @@ LocalDate.prototype.toString = function() {
 };
 //console.log(new LocalDate(2020, 12, 28).toString() );
 
-let dateUs = new Date;
-let dayDateUs = dateUs.getDay()
-let monthDateUs = dateUs.getMonth() + 1
-let yearDateUs = dateUs.getFullYear()
-let weakName = LocalDate.FULLDAYS[(dateUs.getDay() - 1 + 7) % 7]
+const dateUs = new Date;
+const dayDateUs = dateUs.getDay()
+const monthDateUs = dateUs.getMonth() + 1
+const yearDateUs = dateUs.getFullYear()
+const weakName = LocalDate.FULLDAYS[(dateUs.getDay() - 1 + 7) % 7]
 
 
 

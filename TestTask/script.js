@@ -1,138 +1,132 @@
-function localDate(yearNum, monthNum, dayNum) {
-  const localDateObj = {
-      _d: new Date(yearNum, monthNum - 1, dayNum),
-      getDate() {
-          return localDateObj._d.getDate();
-      },
-      getMonthNum() {
-          return localDateObj._d.getMonth() + 1;
-      },
-      getMonthName() {
-          return localDate.MONTHES[localDateObj._d.getMonth()];
-      },
-      getMonthSindayName() {
-          return localDate.MONTHESINDAY[localDateObj._d.getMonth()];
-      },
-      getFullYear() {
-          return localDateObj._d.getFullYear();
-      },
-      getDay() {
-          return (localDateObj._d.getDay() - 1 + 7) % 7;
-      },
-      getDayNames() {
-          return localDate.DAYS[localDateObj.getDay()];
-      },
-      getFullDayNames() {
-          return localDate.FULLDAYS[localDateObj.getDay()];
-      },
-      toString() {
-          return `${localDateObj.getDayNames()}, ${localDateObj.getDate()} ${localDate.MONTHESINDAY[localDateObj._d.getMonth()]} ${localDateObj.getFullYear()}`
-      }
-  };
+'use strict'
 
-  return localDateObj;
+function LocalDate(yearNum, monthNum, dayNum) {
+  
+  this._d = new Date(yearNum, monthNum - 1, dayNum);
+  
 }
 
-localDate.MONTHES = ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень'];
-localDate.MONTHESINDAY = ['Січня', 'Лютого', 'Березеня', 'Квітня', 'Травня', 'Червня', 'Липня', 'Серпня', 'Вересня', 'Жовтня', 'Листопада', 'Грудня'];
-localDate.DAYS = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'];
-localDate.FULLDAYS = ['Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П\'ятниця', 'Субота', 'Неділя']
+LocalDate.MONTHES = ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень'];
+LocalDate.MONTHESINDAY = ['Січня', 'Лютого', 'Березеня', 'Квітня', 'Травня', 'Червня', 'Липня', 'Серпня', 'Вересня', 'Жовтня', 'Листопада', 'Грудня'];
+LocalDate.DAYS = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'];
+LocalDate.FULLDAYS = ['Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П\'ятниця', 'Субота', 'Неділя']
 
-//console.log( localDate(2020, 12, 28).toString() );
+LocalDate.prototype.getDate = function() {
+  return this._d.getDate();
+};
+LocalDate.prototype.getMonthNum = function() {
+  return this._d.getMonth() + 1;
+};
+LocalDate.prototype.getMonthName = function() {
+  return LocalDate.MONTHES[this._d.getMonth()];
+};
+LocalDate.prototype.getMonthSindayName = function() {
+  return LocalDate.MONTHESINDAY[this._d.getMonth()];
+};
+LocalDate.prototype.getFullYear = function() {
+  return this._d.getFullYear();
+};
+LocalDate.prototype.getDay = function() {
+  return (this._d.getDay() - 1 + 7) % 7;
+};
+LocalDate.prototype.getDayNames = function() {
+  return LocalDate.DAYS[this.getDay()];
+};
+LocalDate.prototype.getFullDayNames = function() {
+  return LocalDate.FULLDAYS[this.getDay()];
+};
+LocalDate.prototype.toString = function() {
+  return `${this.getDayNames()}, ${this.getDate()} ${LocalDate.MONTHESINDAY[this._d.getMonth()]} ${this.getFullYear()}`
+};
+//console.log(new LocalDate(2020, 12, 28).toString() );
 
 let dateUs = new Date;
 let dayDateUs = dateUs.getDay()
 let monthDateUs = dateUs.getMonth() + 1
 let yearDateUs = dateUs.getFullYear()
-let weakName = localDate.FULLDAYS[(dateUs.getDay() - 1 + 7) % 7]
+let weakName = LocalDate.FULLDAYS[(dateUs.getDay() - 1 + 7) % 7]
 
 
 
 
-function calendar(dayName, monthNum, yearNum){
-  const firstDay = localDate(yearNum, monthNum, 1);
-  const lastDay = localDate(yearNum, monthNum + 1, 0);
-  const monthDays = [];
-  const lastDayNum = lastDay.getDate() + 6 - lastDay.getDay();
-  let _headerEl, _dayNamesEl, _daysEl;
+function Calendar(dayName, monthNum, yearNum){
 
-  _headerEl = document.querySelector('.navCal__month');
-  _dayNamesEl = document.querySelector('.navCal__calendarWeek');
-  _daysEl = document.querySelector('.navCal__calendarDay')
-  _taskBordDate = document.querySelector('.taskBoard__viev--Week')
-  _taskBordNameDate = document.querySelector('.taskBoard__viev--Data')
-
-  for (let dayNum = 1 - firstDay.getDay(); dayNum <= lastDayNum; dayNum++){
-    monthDays.push(localDate(yearNum, monthNum, dayNum))
-  }
-
-  function fillHeader(){
-    _headerEl.innerText = `${firstDay.getMonthName()} ${firstDay.getFullYear()}`;
-  }
-  function fillTaskBordDate(){
-    _taskBordDate.innerText = `${dayName} ${firstDay.getMonthSindayName()}`;
-  }
-  function fillWeaksName(){
-    _dayNamesEl.innerText = ''
-    const dayNameCall = localDate.DAYS.map(dayName => {
-      const dayEl = document.createElement('li');
-      dayEl.classList.add('navCal__calendarWeek--Name')
-      dayEl.innerText = dayName;
-      return dayEl;
-    })
-    _dayNamesEl.append(...dayNameCall)
-  }
-
-  function _renderDay(localDay){
-    const el = document.createElement('li')
-    el.innerText = localDay.getDate();
-    el.classList.add('CalendarDay');
-
-    if(localDay.getMonthNum() !== monthNum){
-      el.classList.add('CalendarDay--notInSort')
-    }
-
-    if(localDay.getDate() === dayName && localDay.getMonthNum() === monthNum){
-      el.classList.add('CalendarDay--Active')
-    }
-
-    return el;
-
-  } 
-
-  function fillDayElement(){
-    _daysEl.innerText = ''
-    const dayElCall = monthDays.map(_renderDay)
-    _daysEl.append(...dayElCall);
-  }
-
-  function fillFullDay(){
-    _taskBordNameDate.innerText =`${weakName}`;
-  };
-
-  //console.log(localDate.FULLDAYS[]);
-
-  fillTaskBordDate()
-  fillHeader()
-  fillWeaksName()
-  fillDayElement()
-  fillFullDay()
+  this.firstDay = new LocalDate(yearNum, monthNum, 1);
+  this.lastDay = new LocalDate(yearNum, monthNum + 1, 0);
+  this.monthDays = [];
+  
 
 
-  return {
-    _headerEl, 
-    _dayNamesEl, 
-    _daysEl,
-    firstDay,
-    lastDay,
-    monthDays,
-    dayName
-
-  };
-
-
+  this._init()
+  this.fillTaskBordDate()
+  this.fillHeader()
+  this.fillWeaksName()
+  this.fillDayElement()
+  this.fillFullDay()
 
 };
 
-calendar(dayDateUs, monthDateUs, yearDateUs);
+Calendar.prototype._init = function(){
+
+  this._headerEl = document.querySelector('.navCal__month');
+  this._dayNamesEl = document.querySelector('.navCal__calendarWeek');
+  this._daysEl = document.querySelector('.navCal__calendarDay')
+  this._taskBordDate = document.querySelector('.taskBoard__viev--Week')
+  this._taskBordNameDate = document.querySelector('.taskBoard__viev--Data')
+
+
+  const lastDayNum = this.lastDay.getDate() + 6 - this.lastDay.getDay();
+
+  for (let dayNum = 1 - this.firstDay.getDay(); dayNum <= lastDayNum; dayNum++){
+    this.monthDays.push(new LocalDate(this.yearNum, this.monthNum, dayNum))
+  }
+}
+
+Calendar.prototype.fillHeader = function(){
+  this._headerEl.innerText = `${this.firstDay.getMonthName()} ${this.firstDay.getFullYear()}`;
+}
+Calendar.prototype.fillTaskBordDate = function(){
+  this._taskBordDate.innerText = `${this.firstDay.getMonthSindayName()}`;
+}
+Calendar.prototype.fillWeaksName = function(){
+  this._dayNamesEl.innerText = ''
+  const dayNameCall = LocalDate.DAYS.map(dayName => {
+    const dayEl = document.createElement('li');
+    dayEl.classList.add('navCal__calendarWeek--Name')
+    dayEl.innerText = dayName;
+    return dayEl;
+  })
+  this._dayNamesEl.append(...dayNameCall)
+}
+
+Calendar.prototype._renderDay = function(localDay){
+  const el = document.createElement('li')
+
+  el.innerText = localDay.getDate();
+  el.classList.add('CalendarDay');
+
+  if(localDay.getMonthNum() !== this.monthNum){
+    el.classList.add('CalendarDay--notInSort')
+  }
+
+  if(localDay.getDate() === this.dayName && localDay.getMonthNum() === this.monthNum){
+    el.classList.add('CalendarDay--Active')
+  }
+
+  return el;
+
+} 
+
+Calendar.prototype.fillDayElement = function(){
+  this._daysEl.innerText = ''
+  const dayElCall = this.monthDays.map(this._renderDay, this)
+  this._daysEl.append(...dayElCall);
+}
+
+Calendar.prototype.fillFullDay = function(){
+  this._taskBordNameDate.innerText =`${weakName}`;
+};
+
+ 
+new Calendar(dayDateUs, monthDateUs, yearDateUs);
 

@@ -104,7 +104,7 @@ Calendar.prototype._renderDay = function(localDay){
 
   el.innerText = localDay.getDate();
 
-  console.log(this); /// відсуті дані
+  console.log(localDay); /// відсуті дані
   el.classList.add('CalendarDay');
 
   if(localDay.getMonthNum() !== this.monthNum){

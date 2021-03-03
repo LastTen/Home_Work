@@ -53,7 +53,11 @@ function Calendar(dayName, monthNum, yearNum){
 
   this.firstDay = new LocalDate(yearNum, monthNum, 1);
   this.lastDay = new LocalDate(yearNum, monthNum + 1, 0);
+  this.fullDayWeakName = new LocalDate(yearNum, monthNum, dayName).getFullDayNames();
   this.monthDays = [];
+  this.dayName = dayName
+  this.monthNum = monthNum;
+  this.yearNum = yearNum
   
 
 
@@ -85,9 +89,11 @@ Calendar.prototype._init = function(){
 Calendar.prototype.fillHeader = function(){
   this._headerEl.innerText = `${this.firstDay.getMonthName()} ${this.firstDay.getFullYear()}`;
 }
+
 Calendar.prototype.fillTaskBordDate = function(){
-  this._taskBordDate.innerText = `${this.firstDay.getMonthSindayName()}`;
+  this._taskBordDate.innerText = `${this.dayName} ${this.firstDay.getMonthSindayName()}`;
 }
+
 Calendar.prototype.fillWeaksName = function(){
   this._dayNamesEl.innerText = ''
   const dayNameCall = LocalDate.DAYS.map(dayName => {
@@ -104,7 +110,6 @@ Calendar.prototype._renderDay = function(localDay){
 
   el.innerText = localDay.getDate();
 
-  console.log(localDay); /// відсуті дані
   el.classList.add('CalendarDay');
 
   if(localDay.getMonthNum() !== this.monthNum){
@@ -126,7 +131,7 @@ Calendar.prototype.fillDayElement = function(){
 }
 
 Calendar.prototype.fillFullDay = function(){
-  this._taskBordNameDate.innerText =`${weakName}`;
+  this._taskBordNameDate.innerText =`${this.fullDayWeakName}`;
 };
 
  

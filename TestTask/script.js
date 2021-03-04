@@ -51,16 +51,11 @@ const weakName = LocalDate.FULLDAYS[(dateUs.getDay() - 1 + 7) % 7]
 
 function Calendar(dayName, monthNum, yearNum){
 
-  this.firstDay = new LocalDate(yearNum, monthNum, 1);
-  this.lastDay = new LocalDate(yearNum, monthNum + 1, 0);
+
   this.fullDayWeakName = new LocalDate(yearNum, monthNum, dayName).getFullDayNames();
-  this.monthDays = [];
   this.dayName = dayName
-  this.monthNum = monthNum;
-  this.yearNum = yearNum
-  
 
-
+  this._createMonthParam(monthNum, yearNum)
   this._init()
   this.fillTaskBordDate()
   this.fillHeader()
@@ -70,6 +65,30 @@ function Calendar(dayName, monthNum, yearNum){
 
 };
 
+
+Calendar.prototype._shiftMonth = function(shiftMonth){
+  this._createMonthParam(this.monthNum + shiftMonth, this.yearNum);
+  console.log(this);
+
+  this.fillDayElement()
+  this.fillHeader()
+}
+
+Calendar.prototype._createMonthParam = function(monthNum, yearNum){
+
+  this.firstDay = new LocalDate(yearNum, monthNum, 1);
+  this.lastDay = new LocalDate(yearNum, monthNum + 1, 0);
+  this.monthDays = [];
+  this.monthNum = monthNum;
+  this.yearNum = yearNum
+
+  const lastDayNum = this.lastDay.getDate() + 6 - this.lastDay.getDay();
+
+  for (let dayNum = 1 - this.firstDay.getDay(); dayNum <= lastDayNum; dayNum++){
+    this.monthDays.push(new LocalDate(this.yearNum, this.monthNum, dayNum))
+  }
+}
+
 Calendar.prototype._init = function(){
 
   this._headerEl = document.querySelector('.navCal__month');
@@ -77,13 +96,13 @@ Calendar.prototype._init = function(){
   this._daysEl = document.querySelector('.navCal__calendarDay')
   this._taskBordDate = document.querySelector('.taskBoard__viev--Week')
   this._taskBordNameDate = document.querySelector('.taskBoard__viev--Data')
+  this._prevButton = document.querySelector('.navCal__muveBefore')
+  this._afterButton = document.querySelector('.navCal__muveAfter')
 
+  this._prevButton.addEventListener('click', this._shiftMonth.bind(this, -1))
 
-  const lastDayNum = this.lastDay.getDate() + 6 - this.lastDay.getDay();
+  this._afterButton.addEventListener('click', this._shiftMonth.bind(this, 1))
 
-  for (let dayNum = 1 - this.firstDay.getDay(); dayNum <= lastDayNum; dayNum++){
-    this.monthDays.push(new LocalDate(this.yearNum, this.monthNum, dayNum))
-  }
 }
 
 Calendar.prototype.fillHeader = function(){
@@ -135,5 +154,6 @@ Calendar.prototype.fillFullDay = function(){
 };
 
  
-new Calendar(dayDateUs, monthDateUs, yearDateUs);
+
+console.log(new Calendar(dayDateUs, monthDateUs, yearDateUs));
 

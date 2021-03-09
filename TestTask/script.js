@@ -143,6 +143,20 @@ Calendar.prototype._renderDay = function(localDay){
 
 } 
 
+Calendar.prototype._renderMonthDay = function(localDay){
+  const el = document.createElement('li')
+
+  el.innerText = localDay.getDate();
+
+
+  if(localDay.getDate() === this.dayName && localDay.getMonthNum() === this.monthNum){
+    el.classList.add('CalendarDay--Active')
+  }
+
+  return el;
+
+} 
+
 Calendar.prototype.fillDayElement = function(){
   this._daysEl.innerText = ''
   const dayElCall = this.monthDays.map(this._renderDay, this)
@@ -155,5 +169,5 @@ Calendar.prototype.fillFullDay = function(){
 
  
 
-console.log(new Calendar(dayDateUs, monthDateUs, yearDateUs));
+console.log(new Calendar(25, monthDateUs, yearDateUs));
 
